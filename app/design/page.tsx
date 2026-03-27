@@ -41,13 +41,20 @@ export default function DesignPage() {
               负责成都理工大学官方网站首页轮播大图的设计制作，
               结合校园文化与时事热点，呈现学校的多元风采。
             </p>
-            <div className="aspect-[21/9] overflow-hidden rounded-lg border border-border bg-muted">
-              <img
-                src="/v0-designer-brand-tk/qswl.jpg"
-                alt="成都理工大学官网门户大图作品"
+            {/* 加入的成都理工大学轮播大图图片 */}
+            <div className="mb-6 rounded-lg overflow-hidden border border-border aspect-[21/9]">
+              <img 
+                src="/qswl.jpg" 
+                alt="成都理工大学官网轮播大图作品" 
                 className="w-full h-full object-cover"
               />
             </div>
+            {/* 保留原始的占位符，如果不需要可以自行删除下方 ImagePlaceholder 组件 */}
+            <ImagePlaceholder
+              icon={Monitor}
+              text="官网门户大图作品"
+              aspectRatio="aspect-[21/9]"
+            />
           </div>
 
           {/* 海报获奖作品 */}
@@ -158,7 +165,7 @@ export default function DesignPage() {
             </div>
           </div>
 
-          {/* 手书动画尝试 */}
+          {/* 手术动画尝试 */}
           <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
             <div className="flex items-start gap-4 mb-6">
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
