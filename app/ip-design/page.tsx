@@ -104,7 +104,7 @@ export default function IPDesignPage() {
                 </div>
                 <div>
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
-                    时尚芭莎 × 纤茶 IP形象设计
+                    时尚芭莎 × 纤茶｜IP形象设计
                   </h2>
                   <p className="text-sm text-accent font-medium tracking-wide italic">全国大学生广告艺术大赛获奖作品</p>
                 </div>
