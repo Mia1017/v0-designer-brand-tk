@@ -83,8 +83,8 @@ export default function DesignPage() {
 
   <div className="w-full pt-6 border-t border-border/60 space-y-12">
     
-    {/* 第一部分：三张横排，整体放大 */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+    {/* 第一部分：三张横排，再放大 */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
       {[
         {
           src: "/v0-designer-brand-tk/hoshi.jpg",
@@ -103,12 +103,12 @@ export default function DesignPage() {
         },
       ].map((item, index) => (
         <div key={index} className="flex flex-col items-center gap-5">
-          <div className="w-full aspect-[4/5] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+          <div className="w-full aspect-[3.6/5] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
             <div className="w-full h-full overflow-hidden flex items-center justify-center">
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full h-full object-contain p-1 transition-transform duration-500 group-hover/item:scale-[1.03]"
+                className="w-full h-full object-contain p-0.5 transition-transform duration-500 group-hover/item:scale-[1.03]"
               />
             </div>
           </div>
@@ -124,11 +124,11 @@ export default function DesignPage() {
     </div>
 
     {/* 第二部分：左矢量插画缩小，右同人拼贴 */}
-    <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-[0.78fr_1.22fr] gap-10 items-start">
       
       {/* 左边：矢量插画 */}
       <div className="flex flex-col items-center gap-6">
-        <div className="w-full max-w-[500px] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+        <div className="w-full max-w-[420px] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
           <div className="overflow-hidden">
             <img
               src="/v0-designer-brand-tk/qimo.jpg"
@@ -142,7 +142,7 @@ export default function DesignPage() {
         </h3>
       </div>
 
-      {/* 右边：tr 等比例瀑布流拼贴 */}
+      {/* 右边：tr 等比例拼贴 */}
       <div className="flex flex-col items-center gap-6">
         <div className="w-full flex justify-center">
           <div className="columns-2 gap-4 w-full max-w-[560px]">
@@ -176,46 +176,68 @@ export default function DesignPage() {
 
   <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-10 bg-primary/20 blur-[60px] -z-10"></div>
 </div>
-
           {/* 创意节气摄影 */}
-          <div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg overflow-hidden relative">
-            <div className="max-w-3xl mx-auto text-center mb-12 relative z-10">
-              <div className="flex items-center gap-4 mb-6 justify-center">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 shadow-inner">
-                  <Camera className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
-                    创意节气摄影
-                  </h2>
-                  <p className="text-sm text-accent font-medium tracking-wide italic">
-                    二十四节气系列
-                  </p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                以中国传统二十四节气为主题的创意摄影作品，<br />
-                将自然之美与传统文化相结合，用镜头记录季节变换的诗意。
-              </p>
-            </div>
+<div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg overflow-hidden relative">
+  <div className="max-w-3xl mx-auto text-center mb-12 relative z-10">
+    <div className="flex items-center gap-4 mb-6 justify-center">
+      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 shadow-inner">
+        <Camera className="w-6 h-6 text-accent" />
+      </div>
+      <div>
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
+          创意节气摄影
+        </h2>
+        <p className="text-sm text-accent font-medium tracking-wide italic">
+          二十四节气系列
+        </p>
+      </div>
+    </div>
+    <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+      以中国传统二十四节气为主题的创意摄影作品，<br />
+      将自然之美与传统文化相结合，用镜头记录季节变换的诗意。
+    </p>
+  </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border/60">
-              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
-                春
-              </div>
-              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
-                夏
-              </div>
-              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
-                秋
-              </div>
-              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
-                冬
-              </div>
-            </div>
-
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-10 bg-accent/20 blur-[60px] -z-10"></div>
+  <div className="pt-6 border-t border-border/60 space-y-6">
+    {/* 第一排 */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {["q1.JPG", "q2.JPG", "q3.JPG"].map((img, index) => (
+        <div
+          key={index}
+          className="relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item"
+        >
+          <div className="aspect-[4/5] overflow-hidden">
+            <img
+              src={`/v0-designer-brand-tk/${img}`}
+              alt={`节气摄影作品 ${index + 1}`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-[1.04]"
+            />
           </div>
+        </div>
+      ))}
+    </div>
+
+    {/* 第二排 */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {["q4.JPG", "q5.JPG", "q6.JPG"].map((img, index) => (
+        <div
+          key={index}
+          className="relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item"
+        >
+          <div className="aspect-[4/5] overflow-hidden">
+            <img
+              src={`/v0-designer-brand-tk/${img}`}
+              alt={`节气摄影作品 ${index + 4}`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-[1.04]"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-10 bg-accent/20 blur-[60px] -z-10"></div>
+</div>
 
           {/* 动画 */}
           <div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg overflow-hidden relative">
