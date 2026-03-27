@@ -60,94 +60,118 @@ export default function DesignPage() {
           </div>
 
           {/* 绘画作品 */}
-          <div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg overflow-hidden relative">
-            <div className="max-w-3xl mx-auto text-center mb-12 relative z-10">
-              <div className="flex items-center gap-4 mb-6 justify-center">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 shadow-inner">
-                  <Brush className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
-                    绘画作品
-                  </h2>
-                  <p className="text-sm text-accent font-medium tracking-wide italic">
-                    游戏原画
-                  </p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                游戏角色原画设计与插画创作，涵盖角色设计、场景概念、道具设计等，<br />
-                展现数字绘画技巧与创意构思能力。
-              </p>
+<div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg overflow-hidden relative">
+  <div className="max-w-3xl mx-auto text-center mb-12 relative z-10">
+    <div className="flex items-center gap-4 mb-6 justify-center">
+      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 shadow-inner">
+        <Brush className="w-6 h-6 text-accent" />
+      </div>
+      <div>
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
+          绘画作品
+        </h2>
+        <p className="text-sm text-accent font-medium tracking-wide italic">
+          游戏原画
+        </p>
+      </div>
+    </div>
+    <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+      游戏角色原画设计与插画创作，涵盖角色设计、场景概念、道具设计等，<br />
+      展现数字绘画技巧与创意构思能力。
+    </p>
+  </div>
+
+  <div className="w-full pt-6 border-t border-border/60 space-y-12">
+    
+    {/* 第一部分：三张横排同尺寸 */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      {[
+        {
+          src: "/v0-designer-brand-tk/hoshi.jpg",
+          alt: "角色插画作品",
+          title: "角色插画作品",
+        },
+        {
+          src: "/v0-designer-brand-tk/jjac.jpg",
+          alt: "GGAC游戏角色晋级作品",
+          title: "GGAC游戏角色晋级作品",
+        },
+        {
+          src: "/v0-designer-brand-tk/IMG_6759.JPG",
+          alt: "手绘人物作品",
+          title: "手绘人物作品",
+        },
+      ].map((item, index) => (
+        <div key={index} className="flex flex-col items-center gap-6">
+          <div className="w-full aspect-[4/5] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+            <div className="w-full h-full overflow-hidden flex items-center justify-center">
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-full h-full object-contain p-1 transition-transform duration-500 group-hover/item:scale-[1.03]"
+              />
             </div>
-
-            <div className="w-full flex flex-col md:flex-row gap-8 max-w-6xl mx-auto items-start pt-6 border-t border-border/60 overflow-x-hidden">
-              
-              {/* 左：jjac */}
-              <div className="w-full md:w-1/3 shrink-0 flex flex-col items-center gap-6">
-                <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
-                  <div className="overflow-hidden">
-                    <img 
-                      src="/v0-designer-brand-tk/jjac.jpg" 
-                      alt="GGAC游戏角色晋级作品" 
-                      className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]" 
-                    />
-                  </div>
-                </div>
-                <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
-                  GGAC游戏角色晋级作品
-                </h3>
-              </div>
-
-              {/* 中：qimo */}
-              <div className="w-full md:w-1/3 shrink-0 flex flex-col items-center gap-6">
-                <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
-                  <div className="overflow-hidden">
-                    <img 
-                      src="/v0-designer-brand-tk/qimo.jpg" 
-                      alt="手绘矢量插画" 
-                      className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]" 
-                    />
-                  </div>
-                </div>
-                <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
-                  手绘矢量插画
-                </h3>
-              </div>
-
-              {/* 右：tr拼图 */}
-              <div className="w-full md:w-1/3 flex flex-col items-center gap-6">
-                <div className="w-full">
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { name: "tr1.jpg", alt: "同人插画创作1" },
-                      { name: "tr2.jpg", alt: "同人插画创作2" },
-                      { name: "tr3.jpg", alt: "同人插画创作3" },
-                      { name: "tr4.jpg", alt: "同人插画创作4" },
-                    ].map((item) => (
-                      <div
-                        key={item.name}
-                        className="aspect-square relative rounded-xl overflow-hidden border border-border bg-white shadow-md group/tr transition-transform duration-300 hover:scale-[1.03]"
-                      >
-                        <div className="w-full h-full p-2">
-                          <img 
-                            src={`/v0-designer-brand-tk/${item.name}`} 
-                            alt={item.alt} 
-                            className="w-full h-full object-contain transition-transform duration-500 group-hover/tr:scale-[1.02]"
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
-                  同人插画创作
-                </h3>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-10 bg-primary/20 blur-[60px] -z-10"></div>
           </div>
+          <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
+            {item.title}
+          </h3>
+        </div>
+      ))}
+    </div>
+
+    {/* 第二部分：左矢量插画，右同人拼贴 */}
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 items-start">
+      
+      {/* 左边：矢量插画 */}
+      <div className="flex flex-col items-center gap-6">
+        <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+          <div className="overflow-hidden">
+            <img
+              src="/v0-designer-brand-tk/qimo.jpg"
+              alt="手绘矢量插画"
+              className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]"
+            />
+          </div>
+        </div>
+        <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
+          手绘矢量插画
+        </h3>
+      </div>
+
+      {/* 右边：tr 等比例瀑布流拼贴 */}
+      <div className="flex flex-col items-center gap-6">
+        <div className="w-full flex justify-center">
+          <div className="columns-2 gap-4 w-full max-w-[520px]">
+            {[
+              { name: "tr1.jpg", alt: "同人插画创作1" },
+              { name: "tr2.jpg", alt: "同人插画创作2" },
+              { name: "tr3.jpg", alt: "同人插画创作3" },
+              { name: "tr4.jpg", alt: "同人插画创作4" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="block mb-4 break-inside-avoid group/item transition-transform hover:scale-[1.03]"
+              >
+                <div className="relative rounded-xl border border-border shadow-md overflow-hidden bg-white">
+                  <img
+                    src={`/v0-designer-brand-tk/${item.name}`}
+                    alt={item.alt}
+                    className="w-full h-auto object-contain block p-1"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
+          同人插画创作
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-10 bg-primary/20 blur-[60px] -z-10"></div>
+</div>
 
           {/* 创意节气摄影 */}
           <div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg overflow-hidden relative">
