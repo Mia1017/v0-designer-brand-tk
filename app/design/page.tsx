@@ -81,37 +81,41 @@ export default function DesignPage() {
               </p>
             </div>
 
-            <div className="w-full flex flex-col md:flex-row gap-8 max-w-6xl mx-auto items-center md:items-start pt-6 border-t border-border/60 overflow-x-hidden">
+            <div className="w-full flex flex-col md:flex-row gap-8 max-w-6xl mx-auto items-start pt-6 border-t border-border/60 overflow-x-hidden">
               
-              {/* 左 */}
-              <div className="w-full md:w-1/3 shrink-0 overflow-hidden relative flex flex-col items-center gap-6">
-                <div className="w-full relative rounded-xl border border-border shadow-lg overflow-hidden bg-white">
-                  <img 
-                    src="/v0-designer-brand-tk/jjac.jpg" 
-                    alt="GGAC游戏角色晋级作品" 
-                    className="w-full h-auto block transition-transform duration-500 hover:scale-[1.03]" 
-                  />
+              {/* 左：jjac */}
+              <div className="w-full md:w-1/3 shrink-0 flex flex-col items-center gap-6">
+                <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+                  <div className="overflow-hidden">
+                    <img 
+                      src="/v0-designer-brand-tk/jjac.jpg" 
+                      alt="GGAC游戏角色晋级作品" 
+                      className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]" 
+                    />
+                  </div>
                 </div>
                 <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
                   GGAC游戏角色晋级作品
                 </h3>
               </div>
 
-              {/* 中 */}
-              <div className="w-full md:w-1/3 shrink-0 overflow-hidden relative flex flex-col items-center gap-6">
-                <div className="w-full relative rounded-xl border border-border shadow-lg overflow-hidden bg-white">
-                  <img 
-                    src="/v0-designer-brand-tk/qimo.jpg" 
-                    alt="手绘矢量插画" 
-                    className="w-full h-auto block transition-transform duration-500 hover:scale-[1.03]" 
-                  />
+              {/* 中：qimo */}
+              <div className="w-full md:w-1/3 shrink-0 flex flex-col items-center gap-6">
+                <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+                  <div className="overflow-hidden">
+                    <img 
+                      src="/v0-designer-brand-tk/qimo.jpg" 
+                      alt="手绘矢量插画" 
+                      className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]" 
+                    />
+                  </div>
                 </div>
                 <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
                   手绘矢量插画
                 </h3>
               </div>
 
-              {/* 右 */}
+              {/* 右：tr拼图 */}
               <div className="w-full md:w-1/3 flex flex-col items-center gap-6">
                 <div className="w-full">
                   <div className="grid grid-cols-2 gap-4">
@@ -123,13 +127,15 @@ export default function DesignPage() {
                     ].map((item) => (
                       <div
                         key={item.name}
-                        className="aspect-square relative rounded-xl overflow-hidden border border-border bg-white shadow-md transition-transform hover:scale-[1.05]"
+                        className="aspect-square relative rounded-xl overflow-hidden border border-border bg-white shadow-md group/tr transition-transform duration-300 hover:scale-[1.03]"
                       >
-                        <img 
-                          src={`/v0-designer-brand-tk/${item.name}`} 
-                          alt={item.alt} 
-                          className="w-full h-full object-cover"
-                        />
+                        <div className="w-full h-full p-2">
+                          <img 
+                            src={`/v0-designer-brand-tk/${item.name}`} 
+                            alt={item.alt} 
+                            className="w-full h-full object-contain transition-transform duration-500 group-hover/tr:scale-[1.02]"
+                          />
+                        </div>
                       </div>
                     ))}
                   </div>
