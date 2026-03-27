@@ -83,13 +83,13 @@ export default function DesignPage() {
 
   <div className="w-full pt-6 border-t border-border/60 space-y-12">
     
-    {/* 第一部分：三张横排同尺寸 */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+    {/* 第一部分：三张横排，整体放大 */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
       {[
         {
           src: "/v0-designer-brand-tk/hoshi.jpg",
           alt: "角色插画作品",
-          title: "角色插画作品",
+          title: "",
         },
         {
           src: "/v0-designer-brand-tk/jjac.jpg",
@@ -99,10 +99,10 @@ export default function DesignPage() {
         {
           src: "/v0-designer-brand-tk/IMG_6759.JPG",
           alt: "手绘人物作品",
-          title: "手绘人物作品",
+          title: "",
         },
       ].map((item, index) => (
-        <div key={index} className="flex flex-col items-center gap-6">
+        <div key={index} className="flex flex-col items-center gap-5">
           <div className="w-full aspect-[4/5] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
             <div className="w-full h-full overflow-hidden flex items-center justify-center">
               <img
@@ -112,19 +112,23 @@ export default function DesignPage() {
               />
             </div>
           </div>
-          <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
-            {item.title}
-          </h3>
+          {item.title ? (
+            <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
+              {item.title}
+            </h3>
+          ) : (
+            <div className="h-[20px]" />
+          )}
         </div>
       ))}
     </div>
 
-    {/* 第二部分：左矢量插画，右同人拼贴 */}
-    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 items-start">
+    {/* 第二部分：左矢量插画缩小，右同人拼贴 */}
+    <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
       
       {/* 左边：矢量插画 */}
       <div className="flex flex-col items-center gap-6">
-        <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+        <div className="w-full max-w-[500px] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
           <div className="overflow-hidden">
             <img
               src="/v0-designer-brand-tk/qimo.jpg"
@@ -141,12 +145,12 @@ export default function DesignPage() {
       {/* 右边：tr 等比例瀑布流拼贴 */}
       <div className="flex flex-col items-center gap-6">
         <div className="w-full flex justify-center">
-          <div className="columns-2 gap-4 w-full max-w-[520px]">
+          <div className="columns-2 gap-4 w-full max-w-[560px]">
             {[
-              { name: "tr1.jpg", alt: "同人插画创作1" },
-              { name: "tr2.jpg", alt: "同人插画创作2" },
-              { name: "tr3.jpg", alt: "同人插画创作3" },
-              { name: "tr4.jpg", alt: "同人插画创作4" },
+              { name: "tr1.jpg", alt: "同人创作1" },
+              { name: "tr4.jpg", alt: "同人创作4" },
+              { name: "tr3.jpg", alt: "同人创作3" },
+              { name: "tr2.jpg", alt: "同人创作2" },
             ].map((item, index) => (
               <div
                 key={index}
@@ -164,7 +168,7 @@ export default function DesignPage() {
           </div>
         </div>
         <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
-          同人插画创作
+          同人创作
         </h3>
       </div>
     </div>
