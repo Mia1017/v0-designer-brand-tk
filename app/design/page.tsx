@@ -12,7 +12,7 @@ export default function DesignPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="font-serif text-4xl md:text-6xl font-light text-foreground mb-6">
-            设计作品
+            视觉设计
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             海报设计 · 摄影作品 · 绘画原画 · 动画创作
@@ -41,11 +41,13 @@ export default function DesignPage() {
               负责成都理工大学官方网站首页轮播大图的设计制作，
               结合校园文化与时事热点，呈现学校的多元风采。
             </p>
-            <ImagePlaceholder
-              icon={Monitor}
-              text="官网门户大图作品"
-              aspectRatio="aspect-[21/9]"
-            />
+            <div className="aspect-[21/9] overflow-hidden rounded-lg border border-border bg-muted">
+              <img
+                src="/v0-designer-brand-tk/qswl.jpg"
+                alt="成都理工大学官网门户大图作品"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           {/* 海报获奖作品 */}
@@ -156,7 +158,7 @@ export default function DesignPage() {
             </div>
           </div>
 
-          {/* 手术动画尝试 */}
+          {/* 手书动画尝试 */}
           <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
             <div className="flex items-start gap-4 mb-6">
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
