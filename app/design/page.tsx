@@ -1,7 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Monitor, Image, Camera, Brush, Play } from "lucide-react"
-import { ImagePlaceholder } from "@/components/image-placeholder"
 
 export default function DesignPage() {
   return (
@@ -43,7 +42,6 @@ export default function DesignPage() {
               结合校园文化与时事热点，呈现学校的多元风采。
             </p>
 
-            {/* ✅ 这里是关键修改（不裁剪原图） */}
             <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white">
               <img 
                 src="/v0-designer-brand-tk/qswl.jpg" 
@@ -53,7 +51,7 @@ export default function DesignPage() {
             </div>
           </div>
 
-          {/* 海报获奖作品 */}
+          {/* 游戏原画 */}
           <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
             <div className="flex items-start gap-4 mb-6">
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
@@ -61,19 +59,67 @@ export default function DesignPage() {
               </div>
               <div>
                 <h2 className="font-serif text-2xl font-light text-foreground mb-2">
-                  海报获奖作品
+                  绘画作品
                 </h2>
-                <p className="text-sm text-muted-foreground">创意海报设计</p>
+                <p className="text-sm text-muted-foreground">游戏原画</p>
               </div>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              在各类设计比赛中获奖的海报作品，涵盖公益、文化、商业等多种主题，
-              展现创意思维与视觉表达能力。
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              游戏角色原画设计与插画创作，涵盖角色设计、场景概念、道具设计等，
+              展现数字绘画技巧与创意构思能力。
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <ImagePlaceholder icon={Image} text="海报作品 1" aspectRatio="aspect-[3/4]" />
-              <ImagePlaceholder icon={Image} text="海报作品 2" aspectRatio="aspect-[3/4]" />
-              <ImagePlaceholder icon={Image} text="海报作品 3" aspectRatio="aspect-[3/4]" />
+
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+              {[
+                {
+                  src: "/v0-designer-brand-tk/ggac.jpg",
+                  alt: "GGAC游戏角色晋级作品",
+                  title: "GGAC游戏角色晋级作品",
+                },
+                {
+                  src: "/v0-designer-brand-tk/qimo.jpg",
+                  alt: "手绘矢量插画",
+                  title: "手绘矢量插画",
+                },
+                {
+                  src: "/v0-designer-brand-tk/tr1.jpg",
+                  alt: "游戏原画作品 1",
+                  title: "游戏原画作品",
+                },
+                {
+                  src: "/v0-designer-brand-tk/tr2.jpg",
+                  alt: "游戏原画作品 2",
+                  title: "游戏原画作品",
+                },
+                {
+                  src: "/v0-designer-brand-tk/tr3.jpg",
+                  alt: "游戏原画作品 3",
+                  title: "游戏原画作品",
+                },
+                {
+                  src: "/v0-designer-brand-tk/tr4.jpg",
+                  alt: "游戏原画作品 4",
+                  title: "游戏原画作品",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="mb-4 break-inside-avoid"
+                >
+                  <div className="group overflow-hidden rounded-xl border border-border bg-white shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div className="overflow-hidden">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                    </div>
+                    <div className="px-4 py-3 text-center border-t border-border/60">
+                      <p className="text-sm text-muted-foreground">{item.title}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -95,33 +141,18 @@ export default function DesignPage() {
               将自然之美与传统文化相结合，用镜头记录季节变换的诗意。
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <ImagePlaceholder icon={Camera} text="春" aspectRatio="aspect-square" />
-              <ImagePlaceholder icon={Camera} text="夏" aspectRatio="aspect-square" />
-              <ImagePlaceholder icon={Camera} text="秋" aspectRatio="aspect-square" />
-              <ImagePlaceholder icon={Camera} text="冬" aspectRatio="aspect-square" />
-            </div>
-          </div>
-
-          {/* 绘画作品 */}
-          <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
-                <Brush className="w-6 h-6 text-accent" />
+              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
+                春
               </div>
-              <div>
-                <h2 className="font-serif text-2xl font-light text-foreground mb-2">
-                  绘画作品
-                </h2>
-                <p className="text-sm text-muted-foreground">游戏原画</p>
+              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
+                夏
               </div>
-            </div>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              游戏角色原画设计与插画创作，涵盖角色设计、场景概念、道具设计等，
-              展现数字绘画技巧与创意构思能力。
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <ImagePlaceholder icon={Brush} text="游戏原画作品" aspectRatio="aspect-[4/3]" />
-              <ImagePlaceholder icon={Brush} text="插画创作" aspectRatio="aspect-[4/3]" />
+              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
+                秋
+              </div>
+              <div className="aspect-square rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
+                冬
+              </div>
             </div>
           </div>
 
@@ -142,7 +173,9 @@ export default function DesignPage() {
               尝试制作的医学科普动画，将复杂的手术过程以简洁易懂的动画形式呈现，
               探索动画在内容创作领域的应用可能。
             </p>
-            <ImagePlaceholder icon={Play} text="动画作品" aspectRatio="aspect-video" />
+            <div className="aspect-video rounded-xl border border-border bg-muted/30 flex items-center justify-center text-muted-foreground">
+              动画作品
+            </div>
           </div>
 
         </div>
