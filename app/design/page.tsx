@@ -15,7 +15,7 @@ export default function DesignPage() {
             视觉设计
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            平面 · 插画 · 摄影
+            —— 平面 · 插画 · 摄影 ——
           </p>
         </div>
       </section>
