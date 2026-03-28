@@ -24,7 +24,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <span className="font-serif text-2xl md:text-3xl font-light tracking-wide text-foreground">
-              Portfolio
+              Beibei
             </span>
           </Link>
 
