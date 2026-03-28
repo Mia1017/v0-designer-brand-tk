@@ -34,7 +34,7 @@ export default function HomePage() {
             </div>
           </div>
           
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-4 text-balance">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-4 text-balance">
             Hi, I'm Beibei
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
