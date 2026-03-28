@@ -10,7 +10,7 @@ const navItems = [
   { label: "内容运营", href: "/operation" },
   { label: "IP创作", href: "/ip-design" },
   { label: "视觉设计", href: "/design" },
-  { label: "关于我", href: "/about" },
+  { label: "简历", href: "/about" },
 ]
 
 export function Navigation() {
