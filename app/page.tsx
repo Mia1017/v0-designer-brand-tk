@@ -35,17 +35,17 @@ export default function HomePage() {
           </div>
           
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-4 text-balance">
-            运营 · IP · 设计
+            Hi, I'm Beibei
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            热爱内容创作与视觉设计，专注于账号运营、IP形象设计与创意视觉呈现
+            专注账号运营、IP创作与视觉表达，致力于打造有传播力的内容与形象。
           </p>
           
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">爆款内容</span>
-            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">网感热点</span>
-            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">IP创作</span>
-            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">视觉创意</span>
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">热点洞察</span>
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">IP设计</span>
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">视觉表达</span>
           </div>
           
           <Link href="/about">
