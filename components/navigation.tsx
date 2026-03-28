@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, Menu, X } from "lucide-react"
+import { Mail, Menu, X, House } from "lucide-react"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -21,14 +21,15 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="font-serif text-2xl md:text-3xl font-light tracking-wide text-foreground">
-              Beibei
-            </span>
+
+          {/* 左：Home 图标 */}
+          <Link href="/" className="group flex items-center">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center border border-border hover:bg-accent/5 transition-all duration-300">
+              <House className="h-5 w-5 text-foreground/75 group-hover:text-foreground transition-colors duration-300" />
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* 中间导航 */}
           <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href
@@ -49,26 +50,35 @@ export function Navigation() {
             })}
           </div>
 
-          {/* Right Actions */}
+          {/* 右：邮箱 */}
           <div className="flex items-center gap-4">
-            <a href="mailto:your-email@example.com" className="hidden sm:block">
+            <a
+              href="mailto:1317732244@qq.com?subject=作品集联系"
+              className="hidden sm:block"
+            >
               <Button variant="ghost" size="icon" className="relative">
                 <Mail className="h-5 w-5" />
               </Button>
             </a>
+
+            {/* 手机菜单按钮 */}
             <Button
               variant="ghost"
               size="icon"
               className="md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* 手机端菜单 */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="px-4 py-6 space-y-3">
