@@ -15,7 +15,7 @@ export default function DesignPage() {
             视觉设计
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            海报设计 · 摄影作品 · 绘画原画
+            平面 · 插画 · 摄影
           </p>
         </div>
       </section>
@@ -33,16 +33,16 @@ export default function DesignPage() {
                 </div>
                 <div>
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
-                    成都理工大学官网门户
+                    成都理工大学官网
                   </h2>
-                  <p className="text-sm text-accent font-medium tracking-wide italic">
-                    大图制作
+                  <p className="text-sm text-accent font-medium tracking-wide">
+                    门户大图设计
                   </p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
                 负责成都理工大学官方网站首页轮播大图的设计制作，<br />
-                结合校园文化与时事热点，呈现学校的多元风采。
+                结合校园文化与时事热点进行视觉呈现，展现学校多元形象与整体风貌。
               </p>
             </div>
 
@@ -70,14 +70,14 @@ export default function DesignPage() {
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
                     绘画作品
                   </h2>
-                  <p className="text-sm text-accent font-medium tracking-wide italic">
-                    游戏原画
+                  <p className="text-sm text-accent font-medium tracking-wide">
+                    多风格创作
                   </p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
-                游戏角色原画设计与插画创作，涵盖角色设计、场景概念、道具设计等，<br />
-                展现数字绘画技巧与创意构思能力。
+                从卡通到厚涂等多种风格进行创作，具备较强的画面表现力与想象力，<br />
+                能够在不同视觉体系中进行灵活表达。
               </p>
             </div>
 
@@ -92,8 +92,8 @@ export default function DesignPage() {
                   },
                   {
                     src: "/v0-designer-brand-tk/jjac.jpg",
-                    alt: "GGAC游戏角色晋级作品",
-                    title: "GGAC游戏角色晋级作品",
+                    alt: "GGAC大赛游戏角色晋级作品",
+                    title: "GGAC大赛游戏角色晋级作品",
                   },
                   {
                     src: "/v0-designer-brand-tk/IMG_6759.JPG",
@@ -112,7 +112,7 @@ export default function DesignPage() {
                       </div>
                     </div>
                     {item.title ? (
-                      <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
+                      <h3 className="text-sm text-primary font-medium tracking-wider text-center">
                         {item.title}
                       </h3>
                     ) : (
@@ -123,25 +123,27 @@ export default function DesignPage() {
               </div>
 
               {/* 第二部分：左矢量插画，右同人创作 */}
-              <div className="grid grid-cols-1 lg:grid-cols-[0.78fr_1.22fr] gap-10 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-stretch">
                 {/* 左边：矢量插画 */}
-                <div className="flex flex-col items-center gap-6">
-                  <div className="w-full max-w-[360px] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
-                    <div className="overflow-hidden">
-                      <img
-                        src="/v0-designer-brand-tk/qimo.jpg"
-                        alt="手绘矢量插画"
-                        className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]"
-                      />
+                <div className="flex flex-col items-center h-full">
+                  <div className="flex flex-col justify-between h-full gap-6">
+                    <div className="w-full max-w-[430px] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
+                      <div className="overflow-hidden">
+                        <img
+                          src="/v0-designer-brand-tk/qimo.jpg"
+                          alt="手绘矢量插画"
+                          className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]"
+                        />
+                      </div>
                     </div>
+                    <h3 className="text-sm text-primary font-medium tracking-wider text-center">
+                      手绘矢量插画
+                    </h3>
                   </div>
-                  <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
-                    手绘矢量插画
-                  </h3>
                 </div>
 
                 {/* 右边：同人创作 */}
-                <div className="flex flex-col items-center gap-6">
+                <div className="flex flex-col items-center h-full">
                   <div className="w-full flex justify-center">
                     <div className="columns-2 gap-4 w-full max-w-[560px]">
                       {[
@@ -165,7 +167,7 @@ export default function DesignPage() {
                       ))}
                     </div>
                   </div>
-                  <h3 className="text-sm text-primary font-medium tracking-wider italic text-center">
+                  <h3 className="text-sm text-primary font-medium tracking-wider text-center mt-2">
                     同人创作
                   </h3>
                 </div>
@@ -184,16 +186,16 @@ export default function DesignPage() {
                 </div>
                 <div>
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">
-                    创意节气摄影
+                    创意摄影
                   </h2>
-                  <p className="text-sm text-accent font-medium tracking-wide italic">
-                    二十四节气系列
+                  <p className="text-sm text-accent font-medium tracking-wide">
+                    NCDA数字艺术大赛获奖作品
                   </p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
-                以中国传统二十四节气为主题的创意摄影作品，<br />
-                将自然之美与传统文化相结合，用镜头记录季节变换的诗意。
+                作品《节气食刻》以传统二十四节气为主题，从小满、谷雨、小寒等节气特征出发，<br />
+                结合多样食材构建对应场景，通过摄影与绘画的融合，增强画面叙事性与视觉张力。
               </p>
             </div>
 
