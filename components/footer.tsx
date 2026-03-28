@@ -12,7 +12,7 @@ export function Footer() {
               <span className="font-serif text-2xl font-light tracking-wide text-foreground">Portfolio</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-              运营 · IP设计 · 视觉创作
+              运营 · IP · 视觉
             </p>
           </div>
 
@@ -22,17 +22,17 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/operation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  账号运营
+                  内容运营
                 </Link>
               </li>
               <li>
                 <Link href="/ip-design" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  IP设计
+                  IP创作
                 </Link>
               </li>
               <li>
                 <Link href="/design" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  设计作品
+                  视觉设计
                 </Link>
               </li>
             </ul>
@@ -44,7 +44,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  关于我
+                  简历
                 </Link>
               </li>
               <li>
