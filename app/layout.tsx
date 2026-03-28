@@ -19,8 +19,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "个人作品集 - 运营 · IP设计 · 视觉创作",
-  description: "专注于新媒体运营、IP形象设计与视觉创作的个人作品集",
+  title: "Beibei｜内容运营 · IP创作 · 视觉设计",
+  description: "Beibei个人作品集，专注账号运营、IP创作与视觉表达。",
   generator: "v0.app",
 }
 
