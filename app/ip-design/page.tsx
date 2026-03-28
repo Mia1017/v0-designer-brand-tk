@@ -18,7 +18,7 @@ export default function IPDesignPage() {
             IP创作
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Logo · 角色 · 表情包
+            —— Logo · 角色 · 表情包 ——
           </p>
         </div>
       </section>
