@@ -35,7 +35,7 @@ export default function HomePage() {
           </div>
           
           {/* 标题（已优化） */}
-          <h1 className={`${inter.className} text-5xl md:text-7xl font-semibold tracking-tight text-foreground mb-4`}>
+          <h1 className={`${inter.className} text-5xl md:text-7xl font-normal tracking-tight text-foreground mb-4`}>
             Beibei
           </h1>
 
