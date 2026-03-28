@@ -3,10 +3,19 @@
 import Link from "next/link"
 import { Mail, Menu, X } from "lucide-react"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
+
+const navItems = [
+  { label: "内容运营", href: "/operation" },
+  { label: "IP创作", href: "/ip-design" },
+  { label: "视觉设计", href: "/design" },
+  { label: "关于我", href: "/about" },
+]
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -20,31 +29,24 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="/operation"
-              className="text-sm tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-            >
-              内容运营
-            </Link>
-            <Link
-              href="/ip-design"
-              className="text-sm tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-            >
-              IP创作
-            </Link>
-            <Link
-              href="/design"
-              className="text-sm tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-            >
-              视觉设计
-            </Link>
-            <Link
-              href="/about"
-              className="text-sm tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-            >
-              关于我
-            </Link>
+          <div className="hidden md:flex items-center gap-2">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={
+                    isActive
+                      ? "px-4 py-2 rounded-full border border-accent/30 bg-accent/10 text-foreground text-sm tracking-wider transition-all duration-300 shadow-sm"
+                      : "px-4 py-2 rounded-full border border-transparent text-sm tracking-wider text-foreground/70 hover:text-foreground hover:bg-accent/5 transition-all duration-300"
+                  }
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Right Actions */}
@@ -69,35 +71,25 @@ export function Navigation() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
-          <div className="px-4 py-6 space-y-4">
-            <Link
-              href="/operation"
-              className="block text-base tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              内容运营
-            </Link>
-            <Link
-              href="/ip-design"
-              className="block text-base tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              IP创作
-            </Link>
-            <Link
-              href="/design"
-              className="block text-base tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              视觉设计
-            </Link>
-            <Link
-              href="/about"
-              className="block text-base tracking-wider uppercase text-foreground/70 hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              关于我
-            </Link>
+          <div className="px-4 py-6 space-y-3">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={
+                    isActive
+                      ? "block px-4 py-3 rounded-xl border border-accent/30 bg-accent/10 text-foreground text-base tracking-wider transition-all duration-300"
+                      : "block px-4 py-3 rounded-xl border border-transparent text-base tracking-wider text-foreground/70 hover:text-foreground hover:bg-accent/5 transition-all duration-300"
+                  }
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
           </div>
         </div>
       )}
