@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -20,23 +19,13 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* PDF展示 */}
-          <div className="w-full h-[800px] rounded-xl overflow-hidden border border-border shadow-sm">
-            <iframe
-              src="/jianli.pdf"
-              className="w-full h-full"
+          {/* 简历图片 */}
+          <div className="w-full rounded-xl overflow-hidden border border-border shadow-sm bg-white">
+            <img
+              src="/jljl.jpg"
+              alt="简历"
+              className="w-full h-auto block"
             />
-          </div>
-
-          {/* 按钮 */}
-          <div>
-            <Link
-              href="/jianli.pdf"
-              target="_blank"
-              className="text-sm text-accent font-medium hover:opacity-80 transition"
-            >
-              点击查看原文
-            </Link>
           </div>
 
         </div>
