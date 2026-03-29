@@ -49,7 +49,7 @@ export default function DesignPage() {
             <div className="w-full flex flex-col items-center gap-6">
               <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white">
                 <img
-                  src="/v0-designer-brand-tk/qswl.jpg"
+                  src="/qswl.jpg"
                   alt="成都理工大学官网门户大图作品"
                   className="w-full h-auto block"
                 />
@@ -86,17 +86,17 @@ export default function DesignPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
                 {[
                   {
-                    src: "/v0-designer-brand-tk/hoshi.jpg",
+                    src: "/hoshi.jpg",
                     alt: "角色插画作品",
                     title: "",
                   },
                   {
-                    src: "/v0-designer-brand-tk/jjac.jpg",
+                    src: "/jjac.jpg",
                     alt: "GGAC大赛游戏角色晋级作品",
                     title: "GGAC大赛游戏角色晋级作品",
                   },
                   {
-                    src: "/v0-designer-brand-tk/IMG_6759.JPG",
+                    src: "/IMG_6759.JPG",
                     alt: "手绘人物作品",
                     title: "",
                   },
@@ -130,7 +130,7 @@ export default function DesignPage() {
                     <div className="w-full max-w-[430px] relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item">
                       <div className="overflow-hidden">
                         <img
-                          src="/v0-designer-brand-tk/qimo.jpg"
+                          src="/qimo.jpg"
                           alt="手绘矢量插画"
                           className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]"
                         />
@@ -158,7 +158,7 @@ export default function DesignPage() {
                         >
                           <div className="relative rounded-xl border border-border shadow-md overflow-hidden bg-white">
                             <img
-                              src={`/v0-designer-brand-tk/${item.name}`}
+                              src={`/${item.name}`}
                               alt={item.alt}
                               className="w-full h-auto object-contain block p-1"
                             />
@@ -208,7 +208,7 @@ export default function DesignPage() {
                     className="relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item"
                   >
                     <img
-                      src={`/v0-designer-brand-tk/${img}`}
+                      src={`/${img}`}
                       alt={`节气摄影作品 ${index + 1}`}
                       className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]"
                     />
@@ -224,7 +224,7 @@ export default function DesignPage() {
                     className="relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white group/item"
                   >
                     <img
-                      src={`/v0-designer-brand-tk/${img}`}
+                      src={`/${img}`}
                       alt={`节气摄影作品 ${index + 4}`}
                       className="w-full h-auto block transition-transform duration-500 group-hover/item:scale-[1.03]"
                     />
