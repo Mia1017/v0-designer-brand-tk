@@ -82,7 +82,7 @@ export default function OperationPage() {
                     className="w-[200px] sm:w-[220px] h-[380px] relative rounded-2xl border-2 border-primary/10 shadow-lg hover:border-primary/40 transition-all bg-white overflow-hidden group/profile"
                   >
                     <Image
-                      src="/v0-designer-brand-tk/zhuye.jpg"
+                      src="/zhuye.jpg"
                       alt="主页"
                       fill
                       className="object-contain p-1"
@@ -102,7 +102,7 @@ export default function OperationPage() {
                       >
                         <div className="w-[180px] h-[320px] relative rounded-xl border-2 border-white shadow-2xl bg-white overflow-hidden">
                           <Image
-                            src={`/v0-designer-brand-tk/${note.name}`}
+                            src={`/${note.name}`}
                             alt="笔记"
                             fill
                             className="object-contain p-0.5"
@@ -163,7 +163,7 @@ export default function OperationPage() {
                     >
                       <div className="relative rounded-xl border border-border shadow-md overflow-hidden bg-white">
                         <img
-                          src={`/v0-designer-brand-tk/${note.name}`}
+                          src={`/${note.name}`}
                           alt="笔记"
                           className="w-full h-auto object-contain block p-0.5"
                         />
@@ -216,7 +216,7 @@ export default function OperationPage() {
                   {/* 左侧：yangjiji.png 效果图 */}
                   <div className="w-[220px] h-[380px] relative rounded-2xl overflow-hidden drop-shadow-xl shrink-0">
                     <Image
-                      src="/v0-designer-brand-tk/yangjiji.png"
+                      src="/yangjiji.png"
                       alt="效果图展示"
                       fill
                       className="object-contain"
@@ -232,7 +232,7 @@ export default function OperationPage() {
                     >
                       <div className="w-full h-full">
                         <img
-                          src="/v0-designer-brand-tk/biye.jpg"
+                          src="/biye.jpg"
                           alt="文章封面图"
                           className="w-full h-auto block"
                         />
