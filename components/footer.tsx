@@ -49,7 +49,7 @@ export function Footer() {
               </li>
               <li>
                 <a 
-                  href="mailto:your-email@example.com" 
+                  href="mailto:1317732244@qq.com" 
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <Mail className="w-4 h-4" />
