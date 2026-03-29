@@ -27,7 +27,7 @@ export default function HomePage() {
           <div className="mb-8 flex justify-center">
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl bg-white flex items-center justify-center relative">
               <img 
-                src="/v0-designer-brand-tk/touxiang.jpg" 
+                src="/touxiang.jpg" 
                 alt="Beibei"
                 className="w-full h-full object-cover"
               />
@@ -81,7 +81,7 @@ export default function HomePage() {
             <Link href="/operation" className="group relative aspect-[3/4] overflow-hidden bg-muted rounded-lg border border-border/50">
               <div 
                 className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-110" 
-                style={{ backgroundImage: 'url(/v0-designer-brand-tk/duotu.jpg)' }} 
+                style={{ backgroundImage: 'url(/duotu.jpg)' }} 
               />
               <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-primary/20" />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
@@ -97,7 +97,7 @@ export default function HomePage() {
             <Link href="/ip-design" className="group relative aspect-[3/4] overflow-hidden bg-muted rounded-lg border border-border/50">
               <div 
                 className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-110" 
-                style={{ backgroundImage: 'url(/v0-designer-brand-tk/ip.jpg)' }} 
+                style={{ backgroundImage: 'url(/ip.jpg)' }} 
               />
               <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 to-accent/20" />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
@@ -113,7 +113,7 @@ export default function HomePage() {
             <Link href="/design" className="group relative aspect-[3/4] overflow-hidden bg-muted rounded-lg border border-border/50">
               <div 
                 className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-110" 
-                style={{ backgroundImage: 'url(/v0-designer-brand-tk/sheji.jpg)' }} 
+                style={{ backgroundImage: 'url(/sheji.jpg)' }} 
               />
               <div className="absolute inset-0 bg-gradient-to-br from-muted to-secondary/30" />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
