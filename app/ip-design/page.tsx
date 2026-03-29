@@ -58,7 +58,7 @@ export default function IPDesignPage() {
                 >
                   <div className="w-[180px] h-[180px] rounded-full overflow-hidden border-2 border-primary/20 bg-white shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] ring-4 ring-primary/5">
                     <img
-                      src="/v0-designer-brand-tk/logo0.png"
+                      src="/logo0.png"
                       alt="体育学院圆形Logo"
                       className="w-full h-full object-cover object-center translate-x-[1mm]"
                     />
