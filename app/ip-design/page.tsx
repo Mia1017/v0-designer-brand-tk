@@ -75,7 +75,7 @@ export default function IPDesignPage() {
               <div className="w-full">
                 <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white">
                   <img
-                    src="/v0-designer-brand-tk/zhanshi.jpg"
+                    src="/zhanshi.jpg"
                     alt="Logo视觉展示"
                     className="w-full h-auto block"
                   />
@@ -85,7 +85,7 @@ export default function IPDesignPage() {
               <div className="w-full flex flex-col items-center gap-6 pt-6 border-t border-border/60">
                 <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white">
                   <img
-                    src="/v0-designer-brand-tk/xt.jpg"
+                    src="/xt.jpg"
                     alt="吉祥物IP角色设计"
                     className="w-full h-auto block"
                   />
@@ -123,12 +123,12 @@ export default function IPDesignPage() {
             <div className="space-y-12 flex flex-col items-center">
               <div className="w-full">
                 <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white">
-                  <img src="/v0-designer-brand-tk/ip1.jpg" alt="展示一" className="w-full h-auto block" />
+                  <img src="/ip1.jpg" alt="展示一" className="w-full h-auto block" />
                 </div>
               </div>
               <div className="w-full pt-6 border-t border-border/60">
                 <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white">
-                  <img src="/v0-designer-brand-tk/ip2.jpg" alt="展示二" className="w-full h-auto block" />
+                  <img src="/ip2.jpg" alt="展示二" className="w-full h-auto block" />
                 </div>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function IPDesignPage() {
               <div className="w-full md:w-[38%] shrink-0 overflow-hidden relative flex flex-col">
                 <div className="w-full relative rounded-xl border border-border shadow-lg overflow-hidden bg-white p-1">
                   <img
-                    src="/v0-designer-brand-tk/xioahan.jpg"
+                    src="/xioahan.jpg"
                     alt="商店长图截图展示"
                     className="w-full h-auto block aspect-auto object-contain"
                   />
@@ -173,7 +173,7 @@ export default function IPDesignPage() {
                   <div className="w-full max-w-lg">
                     <div className="w-full relative rounded-xl border border-border shadow-[0_15px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden bg-white">
                       <img
-                        src="/v0-designer-brand-tk/lidong.jpg"
+                        src="/lidong.jpg"
                         alt="手绘公众号封面插图"
                         className="w-full h-auto block p-0.5"
                       />
@@ -197,7 +197,7 @@ export default function IPDesignPage() {
                         className="aspect-square relative rounded-xl overflow-hidden border border-border bg-white shadow-md transition-transform hover:scale-[1.05]"
                       >
                         <img
-                          src={`/v0-designer-brand-tk/${gif.name}`}
+                          src={`/${gif.name}`}
                           alt={gif.alt}
                           className="w-full h-full object-contain p-2"
                         />
