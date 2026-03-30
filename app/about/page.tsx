@@ -21,7 +21,7 @@ export default function AboutPage() {
           {/* 简历图片 */}
           <div className="w-full rounded-xl overflow-hidden border border-border shadow-sm bg-white">
             <img
-              src="/v0-designer-brand-tk/jljl.jpg"
+              src="/wdjl.jpg"
               alt="简历"
               className="w-full h-auto block"
             />
