@@ -9,12 +9,11 @@ import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 
 const bilibiliReports = [
-  { title: "舞台剧｜六一首演", href: "https://mp.weixin.qq.com/s/_OVAMis2lGeLBJEEnu3oQQ" },
-  { title: "舞台剧｜暑期生日场", href: "https://mp.weixin.qq.com/s/buBqNJoiSLKxTgVHfmyzJA" },
-  { title: "上海历史博物馆｜咖啡嘉年华", href: "https://mp.weixin.qq.com/s/LMWaF9f92aWhFFYl5YN4rg" },
-  { title: "北京野生动物园｜五一活动", href: "https://mp.weixin.qq.com/s/JWBU0bq0zIiM1NPcbo9oDg" },
-  { title: "南京天街｜合作活动", href: "https://mp.weixin.qq.com/s/TCqVer7kgEI8UAi9rmYZCQ" },
-  { title: "上海小荧星｜开学季", href: "https://mp.weixin.qq.com/s/J37eCqUupZQqJVpyV-puSQ" },
+  { title: "舞台剧｜暑期生日场", href: "https://mp.weixin.qq.com/s/buBqNJoiSLKxTgVHfmyzJA", cover: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E8%88%9E%E5%8F%B0%E5%89%A7%E7%94%9F%E6%97%A5%E5%9C%BA%E6%88%98%E6%8A%A5.jpg?raw=true" },
+  { title: "上海历史博物馆｜咖啡嘉年华", href: "https://mp.weixin.qq.com/s/LMWaF9f92aWhFFYl5YN4rg", cover: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E4%B8%8A%E5%8E%86%E5%8D%9A%E6%88%98%E6%8A%A5.jpg?raw=true" },
+  { title: "北京野生动物园｜五一活动", href: "https://mp.weixin.qq.com/s/JWBU0bq0zIiM1NPcbo9oDg", cover: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E5%8C%97%E9%87%8E%E6%88%98%E6%8A%A5.jpg?raw=true" },
+  { title: "南京天街｜合作活动", href: "https://mp.weixin.qq.com/s/TCqVer7kgEI8UAi9rmYZCQ", cover: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E5%8D%97%E4%BA%AC%E5%A4%A9%E8%A1%97%E6%88%98%E6%8A%A5.jpg?raw=true" },
+  { title: "上海小荧星｜开学季", href: "https://mp.weixin.qq.com/s/J37eCqUupZQqJVpyV-puSQ", cover: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E5%B0%8F%E8%8D%A7%E6%98%9F%E6%88%98%E6%8A%A5.jpg?raw=true" },
 ]
 
 type BilibiliWorkImage = { src: string; alt: string }
@@ -32,8 +31,8 @@ const bilibiliImages: Record<string, BilibiliWorkImage[]> = {
   ],
   proposal: [
     { src: "/方案截图1.JPG", alt: "策划方案1｜项目概览与IP基础" },
-    { src: "/方案截图2.JPG", alt: "策划方案2｜主题场景与互动玩法" },
-    { src: "/方案截图3.JPG", alt: "策划方案3｜执行节奏与传播资源" },
+    { src: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E6%96%B9%E6%A1%88%E6%88%AA%E5%9B%BE2%E4%BF%AE%E6%94%B9.JPG?raw=true", alt: "策划方案2｜主题场景与互动玩法" },
+    { src: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E6%96%B9%E6%A1%88%E6%88%AA%E5%9B%BE3%E4%BF%AE%E6%94%B9.JPG?raw=true", alt: "策划方案3｜执行节奏与传播资源" },
   ],
 }
 
@@ -84,7 +83,7 @@ function BilibiliGallery({ images, mode, onOpen }: {
 }) {
   const containerClass = mode === "hotspot"
     ? "flex items-start w-full max-w-[640px] mx-auto pt-3 pb-8"
-    : mode === "proposal" ? "grid grid-cols-3 gap-3 sm:gap-5 pt-2 pb-5" : "grid grid-cols-2 gap-4 sm:gap-5 pt-2 pb-7"
+    : mode === "proposal" ? "grid grid-cols-3 gap-3 sm:gap-5 pt-2 pb-5" : "flex flex-col gap-6 pt-2 pb-7"
   return (
     <div className={containerClass}>
       {images.map((image, index) => {
@@ -131,11 +130,11 @@ function BilibiliSection() {
             <BilibiliGallery images={bilibiliImages.hotspot} mode="hotspot" onOpen={openImage} />
           </div>
         </div>
-        <p className="mt-2 text-xs text-muted-foreground/70">点击图片放大查看</p>
+        
       </div>
 
-      <div className="mt-10 pt-10 border-t border-border flex flex-col lg:flex-row gap-10 items-start">
-        <div className="w-full lg:w-[36%] shrink-0">
+      <div className="mt-10 pt-10 border-t border-border space-y-7">
+        <div className="w-full">
           <h3 className="font-serif text-xl font-bold text-foreground mb-4">线下｜活动策划·落地·推广</h3>
           <p className="mb-5 text-sm md:text-base text-muted-foreground leading-relaxed">围绕《霸王龙雷奇》三周年开展暑期整合营销，策划活动方案，协同推进<strong className="text-foreground font-semibold">5场</strong>线下活动落地。</p>
           <ul className="space-y-3 text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -144,19 +143,24 @@ function BilibiliSection() {
             <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" /><span><strong className="font-medium text-foreground">成果战报：</strong>基于活动数据复盘，制作发布<strong className="text-foreground font-semibold">6份</strong>战报，量化成效，支撑商务洽谈与资源拓展。</span></li>
           </ul>
         </div>
-        <div className="w-full min-w-0 lg:flex-1">
+        <div className="w-full min-w-0">
           <BilibiliGallery images={bilibiliImages.proposal} mode="proposal" onOpen={openImage} />
-          <p className="mt-2 text-xs text-muted-foreground/70 text-center">策划方案节选，点击放大查看</p>
+          <p className="mt-2 text-xs text-muted-foreground/70 text-center">策划方案节选</p>
           <div className="mt-6 rounded-xl border border-dashed border-border bg-primary/5 h-24 flex items-center justify-center text-sm text-muted-foreground/60" aria-label="现场落地图片预留位置">现场落地 · 图片待补充</div>
         </div>
       </div>
 
       <div className="mt-8">
         <h4 className="text-base font-medium text-foreground mb-4">成果战报</h4>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {bilibiliReports.map((report) => (
-            <a key={report.href} href={report.href} target="_blank" rel="noopener noreferrer" className="group/report flex items-center justify-between gap-3 rounded-xl border border-border p-4 text-sm text-muted-foreground hover:text-primary hover:border-primary/40 hover:shadow-sm transition-all"><span>{report.title}</span><ExternalLink className="w-4 h-4 shrink-0 text-primary/50 group-hover/report:text-primary" /></a>
-          ))}
+        <div className="overflow-x-auto pb-3">
+          <div className="grid grid-cols-5 gap-3 sm:gap-4 min-w-[760px]">
+            {bilibiliReports.map((report) => (
+              <a key={report.href} href={report.href} target="_blank" rel="noopener noreferrer" className="group/report block min-w-0 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <img src={report.cover} alt={report.title + "战报封面"} loading="lazy" decoding="async" className="block w-full aspect-[3/4] object-contain rounded-xl border-2 border-white bg-white shadow-md transition-shadow group-hover/report:shadow-lg" />
+                <span className="mt-3 flex items-start justify-between gap-2 leading-relaxed"><span>{report.title}</span><ExternalLink className="w-4 h-4 mt-1 shrink-0 text-primary/50" /></span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
       {viewer && <BilibiliLightbox viewer={viewer} onClose={() => setViewer(null)} onStep={stepImage} />}
