@@ -6,6 +6,110 @@ import { TrendingUp, Users, Zap, CheckCircle2, ExternalLink } from "lucide-react
 import Image from "next/image"
 import Link from "next/link"
 
+// 哔哩哔哩新增板块；收到图片后只需补充这里的图片列表。
+type BilibiliWorkImage = { src: string; alt: string; href?: string }
+
+const bilibiliImages: Record<string, BilibiliWorkImage[]> = {
+  visual: [],
+  hotspot: [],
+  proposal: [],
+  onsite: [],
+}
+
+const bilibiliReports = [
+  { title: "舞台剧｜六一首演", href: "https://mp.weixin.qq.com/s/_OVAMis2lGeLBJEEnu3oQQ" },
+  { title: "舞台剧｜暑期生日场", href: "https://mp.weixin.qq.com/s/buBqNJoiSLKxTgVHfmyzJA" },
+  { title: "上海历史博物馆｜咖啡嘉年华", href: "https://mp.weixin.qq.com/s/LMWaF9f92aWhFFYl5YN4rg" },
+  { title: "北京野生动物园｜五一活动", href: "https://mp.weixin.qq.com/s/JWBU0bq0zIiM1NPcbo9oDg" },
+  { title: "南京天街｜合作活动", href: "https://mp.weixin.qq.com/s/TCqVer7kgEI8UAi9rmYZCQ" },
+  { title: "上海小荧星｜开学季", href: "https://mp.weixin.qq.com/s/J37eCqUupZQqJVpyV-puSQ" },
+]
+
+function BilibiliGallery({ title, images }: { title: string; images: BilibiliWorkImage[] }) {
+  return (
+    <div className="min-w-0">
+      {images.length > 0 ? (
+        <div className="space-y-3">
+          {images.map((image) => (
+            <a key={image.src} href={image.href || image.src} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border shadow-sm overflow-hidden bg-white transition-transform hover:scale-[1.02]">
+              <img src={image.src} alt={image.alt} loading="lazy" className="w-full h-auto block" />
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div className="aspect-[4/3] rounded-xl border border-dashed border-border bg-primary/5 flex items-center justify-center text-sm text-muted-foreground/60" aria-label={`${title}图片预留位置`}>
+          {title} · 图片待补充
+        </div>
+      )}
+      <p className="mt-3 text-sm text-muted-foreground text-center">{title}</p>
+    </div>
+  )
+}
+
+function BilibiliSection() {
+  return (
+    <div className="bg-card rounded-xl p-8 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg">
+      <div className="flex items-start gap-4 mb-8">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+          <TrendingUp className="w-6 h-6 text-primary" />
+        </div>
+        <div className="min-w-0">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">B站头部亲子动画IP｜霸王龙雷奇</h2>
+          <p className="text-sm text-accent font-medium tracking-wide">哔哩哔哩动画制作部实习</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex-1 lg:max-w-md">
+          <h3 className="font-serif text-xl font-bold text-foreground mb-4">线上｜内容策划·制作·传播</h3>
+          <p className="mb-5 text-sm md:text-base text-muted-foreground leading-relaxed">
+            负责全平台账号内容策划与运营，制定创意方向与传播排期；实习期间净增粉<strong className="text-foreground font-semibold">8,300+</strong>，总粉丝增长约<strong className="text-foreground font-semibold">40%</strong>。
+          </p>
+          <ul className="space-y-3 text-sm md:text-base text-muted-foreground leading-relaxed">
+            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" /><span><strong className="font-medium text-foreground">视觉创意：</strong>围绕IP调性与传播节点，规划海报、封面及宣传素材。</span></li>
+            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" /><span><strong className="font-medium text-foreground">热点策划：</strong>捕捉平台热梗，结合角色特点策划内容。</span></li>
+          </ul>
+        </div>
+        <div className="w-full lg:flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <BilibiliGallery title="视觉创意" images={bilibiliImages.visual} />
+          <BilibiliGallery title="热点策划" images={bilibiliImages.hotspot} />
+        </div>
+      </div>
+
+      <div className="mt-10 pt-10 border-t border-border flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex-1 lg:max-w-md">
+          <h3 className="font-serif text-xl font-bold text-foreground mb-4">线下｜活动策划·落地·推广</h3>
+          <p className="mb-5 text-sm md:text-base text-muted-foreground leading-relaxed">
+            围绕《霸王龙雷奇》三周年开展暑期整合营销，策划活动方案，协同推进<strong className="text-foreground font-semibold">5场</strong>线下活动落地。
+          </p>
+          <ul className="space-y-3 text-sm md:text-base text-muted-foreground leading-relaxed">
+            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" /><span><strong className="font-medium text-foreground">策划方案：</strong>设计活动主题、互动玩法与场景，制定执行方案。</span></li>
+            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" /><span><strong className="font-medium text-foreground">现场落地：</strong>配合线下物料设计与制作，推进主题打卡及互动空间落地。</span></li>
+            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" /><span><strong className="font-medium text-foreground">成果战报：</strong>基于活动数据复盘，制作发布<strong className="text-foreground font-semibold">6份</strong>战报，量化成效，支撑商务洽谈与资源拓展。</span></li>
+          </ul>
+        </div>
+        <div className="w-full lg:flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <BilibiliGallery title="策划方案" images={bilibiliImages.proposal} />
+          <BilibiliGallery title="现场落地" images={bilibiliImages.onsite} />
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <h4 className="text-base font-medium text-foreground mb-4">成果战报</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {bilibiliReports.map((report) => (
+            <a key={report.href} href={report.href} target="_blank" rel="noopener noreferrer" className="group/report flex items-center justify-between gap-3 rounded-xl border border-border p-4 text-sm text-muted-foreground hover:text-primary hover:border-primary/40 hover:shadow-sm transition-all">
+              <span>{report.title}</span>
+              <ExternalLink className="w-4 h-4 shrink-0 text-primary/50 group-hover/report:text-primary" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
 export default function OperationPage() {
   const ayakaNotes = [
     { name: "meirenyu.jpg", link: "http://xhslink.com/o/7TIILUPPVPk" },
@@ -40,6 +144,7 @@ export default function OperationPage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto space-y-12">
+          <BilibiliSection />
 
           {/* 小红书｜北海道Ayaka酱 */}
           <div className="bg-card rounded-xl p-8 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg">
