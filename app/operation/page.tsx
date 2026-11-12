@@ -83,17 +83,17 @@ function BilibiliGallery({ images, mode, onOpen }: {
   onOpen: (images: BilibiliWorkImage[], index: number) => void
 }) {
   const containerClass = mode === "hotspot"
-    ? "flex items-start w-full max-w-[440px] mx-auto pt-3 pb-8"
+    ? "flex items-start w-full max-w-[640px] mx-auto pt-3 pb-8"
     : mode === "proposal" ? "grid grid-cols-3 gap-3 sm:gap-5 pt-2 pb-5" : "grid grid-cols-2 gap-4 sm:gap-5 pt-2 pb-7"
   return (
     <div className={containerClass}>
       {images.map((image, index) => {
         const placement = mode === "hotspot"
-          ? ["w-[42%] z-30 -rotate-3", "w-[42%] -ml-[13%] mt-6 z-20", "w-[42%] -ml-[13%] mt-12 z-10 rotate-3"][index]
-          : mode === "proposal" ? ["-rotate-2", "mt-7", "mt-14 rotate-2"][index] : ["-rotate-2", "mt-7 rotate-2"][index]
+          ? ["w-[42%] z-30", "w-[42%] -ml-[13%] z-20", "w-[42%] -ml-[13%] z-10"][index]
+          : ""
         return (
           <button key={image.src} type="button" onClick={() => onOpen(images, index)} aria-label={`放大查看${image.alt}`}
-            className={`relative block min-w-0 self-start rounded-xl border-2 border-white bg-white p-0.5 shadow-lg transition-all duration-300 hover:!z-40 hover:scale-[1.04] hover:rotate-0 focus-visible:!z-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary motion-reduce:transition-none ${placement}`}>
+            className={`relative block min-w-0 self-start rounded-xl border-2 border-white bg-white p-0.5 shadow-lg transition-all duration-300 hover:!z-40 hover:scale-[1.02] focus-visible:!z-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary motion-reduce:transition-none ${placement}`}>
             <img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="block w-full h-auto rounded-lg" />
           </button>
         )
@@ -121,7 +121,7 @@ function BilibiliSection() {
       <div>
         <h3 className="font-serif text-xl font-bold text-foreground mb-4">线上｜内容策划·制作·传播</h3>
         <p className="mb-7 text-sm md:text-base text-muted-foreground leading-relaxed max-w-4xl">负责全平台账号内容策划与运营，制定创意方向与传播排期；实习期间净增粉<strong className="text-foreground font-semibold">8,300+</strong>，总粉丝增长约<strong className="text-foreground font-semibold">40%</strong>。</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="space-y-10">
           <div className="min-w-0">
             <p className="mb-4 text-sm md:text-base text-muted-foreground leading-relaxed"><strong className="font-medium text-foreground">视觉创意：</strong>围绕IP调性与传播节点，规划海报、封面及宣传素材。</p>
             <BilibiliGallery images={bilibiliImages.visual} mode="visual" onOpen={openImage} />
@@ -146,7 +146,7 @@ function BilibiliSection() {
         </div>
         <div className="w-full min-w-0 lg:flex-1">
           <BilibiliGallery images={bilibiliImages.proposal} mode="proposal" onOpen={openImage} />
-          <p className="mt-2 text-xs text-muted-foreground/70 text-center">策划方案 · 按1—3顺序查看，点击放大</p>
+          <p className="mt-2 text-xs text-muted-foreground/70 text-center">策划方案节选，点击放大查看</p>
           <div className="mt-6 rounded-xl border border-dashed border-border bg-primary/5 h-24 flex items-center justify-center text-sm text-muted-foreground/60" aria-label="现场落地图片预留位置">现场落地 · 图片待补充</div>
         </div>
       </div>
