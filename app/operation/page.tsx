@@ -182,7 +182,7 @@ function BilibiliSection() {
           </div>
           <dl className="grid grid-cols-2 gap-7 sm:gap-10 shrink-0 pl-5 lg:pl-0">
             <div><dt className="mb-2 text-xs md:text-sm text-muted-foreground">全平台净增粉</dt><dd className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">8,300+</dd></div>
-            <div className="border-l border-border pl-7 sm:pl-10"><dt className="mb-2 text-xs md:text-sm text-muted-foreground">总粉丝增长</dt><dd className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"><span className="mr-1 text-base font-normal text-muted-foreground">约</span>40%</dd></div>
+            <div className="border-l border-border pl-7 sm:pl-10"><dt className="mb-2 text-xs md:text-sm text-muted-foreground">总粉丝增长</dt><dd className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">40%</dd></div>
           </dl>
         </div>
         <div className="mt-14 md:mt-20 space-y-14">
@@ -202,7 +202,7 @@ function BilibiliSection() {
       </div>
 
       <div className="mt-12 pt-10 border-t border-border space-y-10">
-        <div className="rounded-2xl border border-[#d5e1d3] bg-[#e8eee5] p-6 md:p-8">
+        <div className="rounded-2xl border border-[#e5d5c8] bg-[#f3e9df] p-6 md:p-8">
           <div className="border-l-2 border-accent/50 pl-5">
           <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">线下活动</h3>
           <p className="mt-2 text-sm tracking-widest text-accent">活动策划 · 落地 · 推广</p>
@@ -308,7 +308,7 @@ export default function OperationPage() {
                 <ul className="space-y-3 mb-8 text-sm md:text-base text-muted-foreground leading-relaxed">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" />
-                    <span>运营HBC官方小红书账号，协助日本女主播Ayaka完成观光内容策划与制作，发布20+篇北海道观光笔记。</span>
+                    <span>运营HBC官方小红书账号，协助日本女主播大竹彩加完成观光内容策划与制作，发布20+篇北海道观光笔记。</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" />
