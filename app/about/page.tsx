@@ -21,7 +21,7 @@ export default function AboutPage() {
           {/* 简历图片 */}
           <div className="w-full rounded-xl overflow-hidden border border-border shadow-sm bg-white">
             <img
-              src="/wdjl.jpg"
+              src="/王蓓奕 简历改_01.jpg"
               alt="简历"
               className="w-full h-auto block"
             />
