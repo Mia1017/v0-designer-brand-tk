@@ -16,7 +16,7 @@ const bilibiliReports = [
   { title: "上海小荧星｜开学季", href: "https://mp.weixin.qq.com/s/J37eCqUupZQqJVpyV-puSQ", cover: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E5%B0%8F%E8%8D%A7%E6%98%9F%E6%88%98%E6%8A%A5.jpg?raw=true" },
 ]
 
-type BilibiliWorkImage = { src: string; alt: string }
+type BilibiliWorkImage = { src: string; alt: string; caption?: string }
 type BilibiliViewerState = { images: BilibiliWorkImage[]; index: number }
 
 const bilibiliImages: Record<string, BilibiliWorkImage[]> = {
@@ -35,6 +35,21 @@ const bilibiliImages: Record<string, BilibiliWorkImage[]> = {
     { src: "https://github.com/Mia1017/v0mia/blob/0f0be0a9c5f247f47a560d002d6e756fcf8bfe01/public/%E6%96%B9%E6%A1%88%E6%88%AA%E5%9B%BE3%E4%BF%AE%E6%94%B9.JPG?raw=true", alt: "策划方案3｜执行节奏与传播资源" },
   ],
 }
+
+const bilibiliOnsiteGroups = [
+  { title: "舞台剧场外", images: [
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E8%88%9E%E5%8F%B0%E5%89%A7%E5%9C%BA%E5%A4%96%E6%89%93%E5%8D%A1%E8%AE%BE%E8%AE%A1.JPG", alt: "主题打卡设计", caption: "规划剧场外打卡场景，配合宣传物料设计。" },
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E8%88%9E%E5%8F%B0%E5%89%A7%E7%A5%9D%E7%A6%8F%E5%A2%99%E8%AE%BE%E8%AE%A1.JPG", alt: "生日祝福墙", caption: "设计生日祝福互动，配合祝福墙物料落地。" },
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E8%88%9E%E5%8F%B0%E5%89%A7%E5%9C%BA%E5%A4%96%E6%B4%BB%E5%8A%A81.JPG", alt: "场外活动执行", caption: "协调场外物料与现场互动，推进活动执行。" },
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E8%88%9E%E5%8F%B0%E5%89%A7%E5%9C%BA%E5%A4%96%E6%B4%BB%E5%8A%A83.JPG", alt: "亲子互动体验", caption: "配合打卡与祝福互动，延展剧场外IP体验。" },
+  ] },
+  { title: "生日会", images: [
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E7%94%9F%E6%97%A5%E4%BC%9A%E5%9C%BA%E5%A4%96%E5%B8%83%E7%BD%AE%E8%AE%BE%E8%AE%A1%E8%A7%84%E5%88%92.JPG", alt: "场景布置规划", caption: "规划生日会场景与物料布置，推进现场落地。" },
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E7%94%9F%E6%97%A5%E4%BC%9A%E5%8F%B0%E6%9C%AC%E4%B8%8E%E6%B5%81%E7%A8%8B%E6%92%B0%E5%86%99.JPG", alt: "台本与流程", caption: "撰写活动台本与执行流程，衔接现场环节。" },
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E7%94%9F%E6%97%A5%E4%BC%9A%E7%B2%98%E5%9C%9F%E6%B4%BB%E5%8A%A8%E8%AE%BE%E8%AE%A1.JPG", alt: "黏土互动设计", caption: "设计亲子黏土互动玩法与参与流程。" },
+    { src: "https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E7%94%9F%E6%97%A5%E4%BC%9A%E7%B2%98%E5%9C%9F%E6%89%8B%E4%BD%9C%EF%BC%88%E8%87%AA%E5%88%B6%EF%BC%89.JPG", alt: "黏土手作示范", caption: "亲手制作IP黏土样品，辅助互动展示。" },
+  ] },
+]
 
 function BilibiliLightbox({ viewer, onClose, onStep }: {
   viewer: BilibiliViewerState; onClose: () => void; onStep: (step: number) => void
@@ -122,12 +137,15 @@ function BilibiliSection() {
         <p className="mb-7 text-sm md:text-base text-muted-foreground leading-relaxed max-w-4xl">负责全平台账号内容策划与运营，制定创意方向与传播排期；实习期间净增粉<strong className="text-foreground font-semibold">8,300+</strong>，总粉丝增长约<strong className="text-foreground font-semibold">40%</strong>。</p>
         <div className="space-y-10">
           <div className="min-w-0">
-            <p className="mb-4 text-sm md:text-base text-muted-foreground leading-relaxed"><strong className="font-medium text-foreground">视觉创意：</strong>围绕IP调性与传播节点，规划海报、封面及宣传素材。</p>
+            <p className="mb-6 text-center text-sm md:text-base text-muted-foreground leading-relaxed"><strong className="font-semibold text-foreground">视觉创意：</strong>围绕IP调性与传播节点，规划海报、封面及宣传素材。</p>
             <BilibiliGallery images={bilibiliImages.visual} mode="visual" onOpen={openImage} />
           </div>
           <div className="min-w-0">
-            <p className="mb-4 text-sm md:text-base text-muted-foreground leading-relaxed"><strong className="font-medium text-foreground">热点策划：</strong>捕捉平台热梗，结合角色特点策划内容。</p>
-            <BilibiliGallery images={bilibiliImages.hotspot} mode="hotspot" onOpen={openImage} />
+            <p className="mb-6 text-center text-sm md:text-base text-muted-foreground leading-relaxed"><strong className="font-semibold text-foreground">热点策划：</strong>捕捉平台热梗，结合角色特点策划内容。</p>
+            <div className="relative isolate overflow-hidden rounded-2xl border border-border/50 px-4 py-6 sm:px-8 sm:py-8">
+              <img src="https://raw.githubusercontent.com/Mia1017/v0mia/v0/wangbeiyi9-7207-21d319c8/public/%E8%83%8C%E6%99%AF%E5%BA%95%E5%9B%BE1.JPG" alt="" aria-hidden="true" draggable={false} loading="lazy" decoding="async" className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-30 select-none" />
+              <BilibiliGallery images={bilibiliImages.hotspot} mode="hotspot" onOpen={openImage} />
+            </div>
           </div>
         </div>
         
@@ -146,7 +164,26 @@ function BilibiliSection() {
         <div className="w-full min-w-0">
           <BilibiliGallery images={bilibiliImages.proposal} mode="proposal" onOpen={openImage} />
           <p className="mt-2 text-xs text-muted-foreground/70 text-center">策划方案节选</p>
-          <div className="mt-6 rounded-xl border border-dashed border-border bg-primary/5 h-24 flex items-center justify-center text-sm text-muted-foreground/60" aria-label="现场落地图片预留位置">现场落地 · 图片待补充</div>
+          <div className="mt-10 space-y-9">
+            {bilibiliOnsiteGroups.map((group) => (
+              <section key={group.title} aria-label={group.title}>
+                <h4 className="mb-5 text-center font-serif text-lg font-bold text-foreground">{group.title}</h4>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6">
+                  {group.images.map((image, index) => (
+                    <figure key={image.src} className="min-w-0">
+                      <button type="button" onClick={() => openImage(group.images, index)} aria-label={`放大查看${image.alt}`} className="block w-full overflow-hidden rounded-xl border-2 border-white bg-white shadow-md transition-shadow hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                        <img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="block w-full aspect-[3/2] object-contain" />
+                      </button>
+                      <figcaption className="mt-3 text-center text-sm leading-relaxed text-muted-foreground">
+                        <strong className="mb-1 block font-medium text-foreground">{image.alt}</strong>
+                        {image.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -306,7 +343,7 @@ export default function OperationPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary/40 mt-1 shrink-0" />
-                    <span>产出千赞笔记 15+篇，累计获赞 58,000+。</span>
+                    <span>产出千赞笔记 15+篇，累计获赞 61,000+。</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary/40 mt-1 shrink-0" />
