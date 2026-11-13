@@ -174,7 +174,7 @@ function BilibiliSection() {
       </div>
 
       <div>
-        <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between rounded-2xl border border-[#e5d5c8] bg-[#f3e9df] p-6 md:p-8">
           <div className="border-l-2 border-accent/50 pl-5 max-w-2xl">
             <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">线上运营</h3>
             <p className="mt-2 text-sm tracking-widest text-accent">内容策划 · 制作 · 传播</p>
@@ -202,10 +202,12 @@ function BilibiliSection() {
       </div>
 
       <div className="mt-12 pt-10 border-t border-border space-y-10">
-        <div className="border-l-2 border-accent/50 pl-5">
+        <div className="rounded-2xl border border-[#d5e1d3] bg-[#e8eee5] p-6 md:p-8">
+          <div className="border-l-2 border-accent/50 pl-5">
           <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">线下活动</h3>
           <p className="mt-2 text-sm tracking-widest text-accent">活动策划 · 落地 · 推广</p>
           <p className="mt-4 max-w-4xl text-sm md:text-base text-muted-foreground leading-relaxed">围绕《霸王龙雷奇》开播三周年开展暑期整合营销，策划活动方案，协同推进<strong className="text-foreground font-semibold">5场</strong>线下活动落地。</p>
+        </div>
         </div>
         <section aria-label="策划方案">
           <BilibiliSectionHeading title="活动策划方案" note="节选" description="设计活动主题、场景与互动玩法，编排执行流程，形成可落地的活动方案。" />
@@ -288,7 +290,7 @@ export default function OperationPage() {
 
           {/* 小红书｜北海道Ayaka酱 */}
           <div className="bg-card rounded-xl p-8 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg">
-            <div className="flex flex-col gap-8 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_220px] gap-8 md:gap-12 items-center max-w-5xl mx-auto">
               <div className="w-full">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
@@ -318,13 +320,10 @@ export default function OperationPage() {
                   </li>
                 </ul>
               </div>
-
-              <div className="w-full">
-                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start justify-center">
                   <Link
                     href="https://xhslink.com/m/3SDaawO9bWr"
                     target="_blank"
-                    className="shrink-0 w-[200px] sm:w-[220px] h-[380px] relative rounded-2xl border-2 border-primary/10 shadow-lg hover:border-primary/40 transition-all bg-white overflow-hidden group/profile"
+                    className="justify-self-center md:justify-self-end shrink-0 w-[200px] sm:w-[220px] h-[380px] relative rounded-2xl border-2 border-primary/10 shadow-lg hover:border-primary/40 transition-all bg-white overflow-hidden group/profile"
                   >
                     <Image
                       src="/zhuye.jpg"
@@ -336,7 +335,9 @@ export default function OperationPage() {
                       <ExternalLink className="text-white opacity-0 group-hover/profile:opacity-100 transition-opacity w-8 h-8" />
                     </div>
                   </Link>
-                  <div className="grid grid-cols-3 gap-3 sm:gap-4 flex-1 min-w-0 w-full max-w-[720px]">
+            </div>
+            <div className="mt-10 pt-8 border-t border-border">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 w-full max-w-[720px] mx-auto">
                     {ayakaNotes.map((note) => (
                       <Link key={note.name} href={note.link} target="_blank" rel="noopener noreferrer" aria-label={note.title}
                         className="block min-w-0 group/item transition-transform hover:scale-[1.02]">
@@ -349,8 +350,6 @@ export default function OperationPage() {
                       </Link>
                     ))}
                   </div>
-                </div>
-              </div>
             </div>
           </div>
 
