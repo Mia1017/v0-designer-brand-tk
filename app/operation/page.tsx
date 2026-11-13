@@ -39,7 +39,7 @@ const bilibiliImages: Record<string, BilibiliWorkImage[]> = {
 type BilibiliAlbum = { title: string; contribution: string; images: BilibiliWorkImage[] }
 
 const bilibiliOnsiteProjects: { partner: string; title: string; albums: BilibiliAlbum[] }[] = [
-  { partner: "北京广播电视台卡酷少儿卫视 × 哔哩哔哩《卡酷大计划之霸王龙雷奇》", title: "北京木偶剧院 · 舞台剧场外互动空间", albums: [
+  { partner: "北京广播电视台卡酷少儿卫视 × 哔哩哔哩《卡酷大计划之霸王龙雷奇》舞台剧", title: "北京木偶剧院 · 舞台剧场外互动空间", albums: [
     {"title": "美陈打卡设计", "contribution": "策划主题打卡与祝福墙，提供美陈及物料设计参考，协同供应商推进落地。", "images": [{"src": "/舞台剧场外打卡设计.JPG", "alt": "美陈打卡设计｜封面"}, {"src": "/55ef81fd6e97cd47c3c0223fcdc7a3.JPG", "alt": "美陈打卡设计｜过程与现场 1"}, {"src": "/舞台剧祝福墙设计.JPG", "alt": "美陈打卡设计｜过程与现场 2"}]},
     {"title": "互动玩法策划", "contribution": "设计生日祝福等亲子互动，衔接打卡与现场参与，延展剧场外IP体验。", "images": [{"src": "/舞台剧场外活动3.JPG", "alt": "互动玩法策划｜封面"}, {"src": "/4286.JPG", "alt": "互动玩法策划｜过程与现场 1"}, {"src": "/e3b7b770-b8f9-4f94-8d26-e3f93e08deeb.png", "alt": "互动玩法策划｜过程与现场 2"}]},
     {"title": "贩售区规划", "contribution": "规划贩售区陈列与物料配置，对接供应商制作，负责物料及商品物流寄送。", "images": [{"src": "/封面.JPG", "alt": "贩售区规划｜封面"}, {"src": "/IMG_3680.JPG", "alt": "贩售区规划｜过程与现场 1"}, {"src": "/摊位设计规划.JPG", "alt": "贩售区规划｜过程与现场 2"}, {"src": "/舞台剧场外活动1.JPG", "alt": "贩售区规划｜过程与现场 3"}]},
@@ -47,7 +47,7 @@ const bilibiliOnsiteProjects: { partner: string; title: string; albums: Bilibili
   { partner: "霸王龙雷奇三周年特别企划", title: "北京鼓楼 · 雷奇三岁生日会", albums: [
     {"title": "场景布置策划", "contribution": "规划生日会主题场景与打卡动线，提供美陈及物料设计参考，协同供应商推进落地。", "images": [{"src": "/生日会场外布置设计规划.JPG", "alt": "场景布置策划｜封面"}, {"src": "/8717.JPG", "alt": "场景布置策划｜过程与现场 1"}, {"src": "/IMG_2899.JPG", "alt": "场景布置策划｜过程与现场 2"}]},
     {"title": "活动编排与台本", "contribution": "撰写生日会台本与执行流程，策划黏土等亲子互动，衔接主持与现场环节。", "images": [{"src": "/生日会台本与流程撰写.JPG", "alt": "活动编排与台本｜封面"}, {"src": "/3a8d89438e0c25e7baa6be324836f8.JPG", "alt": "活动编排与台本｜过程与现场 1"}, {"src": "/4ba44ce6a94df46979c5cffbe3f0ce.JPG", "alt": "活动编排与台本｜过程与现场 2"}, {"src": "/IMG_7272.JPG", "alt": "活动编排与台本｜过程与现场 3"}, {"src": "/生日会粘土活动设计.JPG", "alt": "活动编排与台本｜过程与现场 4"}]},
-    {"title": "创意手工制作", "contribution": "独立制作IP手工展示样品，用于活动与展会陈列，将角色创意转化为可展示、可体验的活动素材。", "images": [{"src": "/生日会粘土手作（自制）.JPG", "alt": "创意手工制作｜封面"}, {"src": "/IMG_7268.jpg", "alt": "创意手工制作｜过程与现场 1"}, {"src": "/WecomSave_ab6dc040d7c69a0a641d7f5281cd99d2.JPG", "alt": "创意手工制作｜过程与现场 2"}]},
+    {"title": "创意手工制作", "contribution": "独立制作手工展示样品，用于活动与展会陈列，将创意转化为可展示、可体验的活动素材。", "images": [{"src": "/生日会粘土手作（自制）.JPG", "alt": "创意手工制作｜封面"}, {"src": "/IMG_7268.jpg", "alt": "创意手工制作｜过程与现场 1"}, {"src": "/WecomSave_ab6dc040d7c69a0a641d7f5281cd99d2.JPG", "alt": "创意手工制作｜过程与现场 2"}]},
   ] },
 ]
 
@@ -118,7 +118,7 @@ function BilibiliGallery({ images, mode, onOpen }: {
 
 function BilibiliSectionHeading({ title, description, note }: { title: string; description?: string; note?: string }) {
   return (
-    <header className="mb-7 text-center">
+    <header className="mb-7 pt-6 md:pt-8 text-center">
       <div className="mb-3 flex items-center justify-center gap-4">
         <span aria-hidden="true" className="h-px w-8 bg-accent/35" />
         <h4 className="font-serif text-xl md:text-2xl font-bold tracking-[0.08em] text-foreground">{title}</h4>
@@ -174,8 +174,17 @@ function BilibiliSection() {
       </div>
 
       <div>
-        <h3 className="font-serif text-xl font-bold text-foreground mb-4 text-center">线上｜内容策划·制作·传播</h3>
-        <p className="mb-7 mx-auto text-center text-sm md:text-base text-muted-foreground leading-relaxed max-w-4xl">负责全平台账号内容策划与运营，制定创意方向与传播排期；实习期间净增粉<strong className="text-foreground font-semibold">8,300+</strong>，总粉丝增长约<strong className="text-foreground font-semibold">40%</strong>。</p>
+        <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+          <div className="border-l-2 border-accent/50 pl-5 max-w-2xl">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">线上运营</h3>
+            <p className="mt-2 text-sm tracking-widest text-accent">内容策划 · 制作 · 传播</p>
+            <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">负责全平台账号内容策划与运营，制定创意方向与传播排期。</p>
+          </div>
+          <dl className="grid grid-cols-2 gap-7 sm:gap-10 shrink-0 pl-5 lg:pl-0">
+            <div><dt className="mb-2 text-xs md:text-sm text-muted-foreground">全平台净增粉</dt><dd className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">8,300+</dd></div>
+            <div className="border-l border-border pl-7 sm:pl-10"><dt className="mb-2 text-xs md:text-sm text-muted-foreground">总粉丝增长</dt><dd className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"><span className="mr-1 text-base font-normal text-muted-foreground">约</span>40%</dd></div>
+          </dl>
+        </div>
         <div className="mt-14 md:mt-20 space-y-14">
           <div className="min-w-0">
             <BilibiliSectionHeading title="视觉创意" description="围绕IP调性与传播节点，规划海报、封面及宣传素材。" />
@@ -193,9 +202,10 @@ function BilibiliSection() {
       </div>
 
       <div className="mt-12 pt-10 border-t border-border space-y-10">
-        <div>
-          <h3 className="font-serif text-xl font-bold text-foreground mb-4 text-center">线下｜活动策划·落地·推广</h3>
-          <p className="mx-auto max-w-4xl text-center text-sm md:text-base text-muted-foreground leading-relaxed">围绕《霸王龙雷奇》开播三周年开展暑期整合营销，策划活动方案，协同推进<strong className="text-foreground font-semibold">5场</strong>线下活动落地。</p>
+        <div className="border-l-2 border-accent/50 pl-5">
+          <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">线下活动</h3>
+          <p className="mt-2 text-sm tracking-widest text-accent">活动策划 · 落地 · 推广</p>
+          <p className="mt-4 max-w-4xl text-sm md:text-base text-muted-foreground leading-relaxed">围绕《霸王龙雷奇》开播三周年开展暑期整合营销，策划活动方案，协同推进<strong className="text-foreground font-semibold">5场</strong>线下活动落地。</p>
         </div>
         <section aria-label="策划方案">
           <BilibiliSectionHeading title="活动策划方案" note="节选" description="设计活动主题、场景与互动玩法，编排执行流程，形成可落地的活动方案。" />
@@ -220,12 +230,12 @@ function BilibiliSection() {
       </div>
 
       <div className="mt-8">
-        <BilibiliSectionHeading title="数据复盘与战报制作" description="基于实习期间参与及负责的活动，整合曝光、互动、涨粉与用户自传播数据，制作发布6份项目战报，将活动成效转化为商务洽谈与资源拓展的案例支撑。" />
-        <div className="overflow-x-auto pb-3">
+        <BilibiliSectionHeading title="数据复盘与战报制作" description="基于实习期间参与及负责的活动，整合曝光、互动、涨粉与用户自传播数据，在活动结束后一周内完成项目复盘及战报发布；逐步形成战报制作SOP，提升后续产出效率，为商务洽谈与资源拓展提供案例支撑。" />
+        <div className="overflow-x-auto py-3 px-2 -mx-2">
           <div className="grid grid-cols-5 gap-3 sm:gap-4 min-w-[760px]">
             {bilibiliReports.map((report) => (
-              <a key={report.href} href={report.href} target="_blank" rel="noopener noreferrer" className="group/report block min-w-0 text-sm text-muted-foreground hover:text-primary transition-colors">
-                <img src={report.cover} alt={report.title + "战报封面"} loading="lazy" decoding="async" className="block w-full aspect-[3/4] object-contain rounded-xl border-2 border-white bg-white shadow-md transition-shadow group-hover/report:shadow-lg" />
+              <a key={report.href} href={report.href} target="_blank" rel="noopener noreferrer" className="group/report block min-w-0 text-sm text-muted-foreground hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                <img src={report.cover} alt={report.title + "战报封面"} loading="lazy" decoding="async" className="block w-full aspect-[3/4] object-contain rounded-xl border-2 border-white bg-white shadow-md transition-all duration-300 group-hover/report:scale-[1.03] group-hover/report:shadow-lg group-focus-visible/report:scale-[1.03] motion-reduce:transition-none" />
                 <span className="mt-3 flex items-start justify-between gap-2 leading-relaxed"><span>{report.title}</span><ExternalLink className="w-4 h-4 mt-1 shrink-0 text-primary/50" /></span>
               </a>
             ))}
@@ -278,8 +288,8 @@ export default function OperationPage() {
 
           {/* 小红书｜北海道Ayaka酱 */}
           <div className="bg-card rounded-xl p-8 shadow-sm border border-border group transition-all duration-300 hover:shadow-lg">
-            <div className="flex flex-col lg:flex-row gap-12 items-start">
-              <div className="flex-1 lg:max-w-md">
+            <div className="flex flex-col gap-8 items-start">
+              <div className="w-full">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <TrendingUp className="w-6 h-6 text-primary" />
@@ -296,7 +306,7 @@ export default function OperationPage() {
                 <ul className="space-y-3 mb-8 text-sm md:text-base text-muted-foreground leading-relaxed">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" />
-                    <span>运营官方小红书账号，发布20+篇北海道观光笔记。</span>
+                    <span>运营HBC官方小红书账号，协助日本女主播Ayaka完成观光内容策划与制作，发布20+篇北海道观光笔记。</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-4 text-primary/40 mt-1 shrink-0" />
@@ -309,12 +319,12 @@ export default function OperationPage() {
                 </ul>
               </div>
 
-              <div className="w-full lg:flex-1">
-                <div className="flex flex-col sm:flex-row gap-6 items-start justify-center lg:justify-end">
+              <div className="w-full">
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start justify-center">
                   <Link
                     href="https://xhslink.com/m/3SDaawO9bWr"
                     target="_blank"
-                    className="w-[200px] sm:w-[220px] h-[380px] relative rounded-2xl border-2 border-primary/10 shadow-lg hover:border-primary/40 transition-all bg-white overflow-hidden group/profile"
+                    className="shrink-0 w-[200px] sm:w-[220px] h-[380px] relative rounded-2xl border-2 border-primary/10 shadow-lg hover:border-primary/40 transition-all bg-white overflow-hidden group/profile"
                   >
                     <Image
                       src="/zhuye.jpg"
@@ -326,7 +336,7 @@ export default function OperationPage() {
                       <ExternalLink className="text-white opacity-0 group-hover/profile:opacity-100 transition-opacity w-8 h-8" />
                     </div>
                   </Link>
-                  <div className="grid grid-cols-3 gap-3 flex-1 min-w-0 w-full max-w-[360px]">
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4 flex-1 min-w-0 w-full max-w-[720px]">
                     {ayakaNotes.map((note) => (
                       <Link key={note.name} href={note.link} target="_blank" rel="noopener noreferrer" aria-label={note.title}
                         className="block min-w-0 group/item transition-transform hover:scale-[1.02]">
